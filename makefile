@@ -119,8 +119,6 @@ sync:
 	@rsync -r -t -u -v --delete             \
     --include "IsPrime1.c++"                \
     --include "IsPrime1.h"                  \
-    --include "IsPrime2.c++"                \
-    --include "IsPrime2.h"                  \
     --exclude "*"                           \
     ../../../exercises/c++/ exercises
 
