@@ -1,24 +1,17 @@
 // ----------
 // StrCmp.h
+//
+// This function starts comparing the first character of each string. If they are equal to each other, it continues with the following pairs until the characters differ or until a terminating null-character is reached.
 // ----------
 
 int my_strcmp( const char *lhs, const char *rhs ) {
-    int tmp = 0;
-    while (*lhs != 0 && * rhs != 0) {
-        if (*lhs != *rhs) {
-            tmp += *lhs - *rhs;
-        }
+    while (*lhs && *rhs) {
+        if (*lhs != *rhs)
+            return *lhs - *rhs;
         lhs++; rhs++;
     }
 
-
-    while (*lhs != 0) {
-        tmp += *(lhs++);
-    }
-
-    while (*rhs != 0) {
-        tmp -= *(rhs++);
-    }
-
-    return tmp;
+    if (*lhs)         return *lhs;
+    else if (*rhs)    return -*rhs;
+    else              return 0;
 }

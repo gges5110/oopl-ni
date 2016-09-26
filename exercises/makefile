@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := test
 
 FILES :=     \
-    IsPrime1
+    StrCmp
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
@@ -40,7 +40,7 @@ else ifeq ($(shell uname -p), unknown)                                  # Docker
     DOXYGEN      := doxygen
     CLANG-FORMAT := clang-format-3.5
 else                                                                    # UTCS
-    CXX          := g++-4.8
+    CXX          := g++
     INCLUDE      := /usr/include
     CXXFLAGS     := -pedantic -std=c++11 -Wall -Weffc++
     LIB          := /usr/lib
