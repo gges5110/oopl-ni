@@ -119,10 +119,12 @@ sync:
     --include "Exceptions2.c++"              \
     --include "Exceptions3.c++"              \
     --include "Operators.c++"                \
+    --include "Variables.c++"                \
     --include "Types.c++"                    \
     --include "Representations.c++"          \
-    --include "Variables.c++"                \
     --include "Arguments.c++"                \
+    --include "Cache.c++"                    \
+    --include "Returns.c++"                  \
     --exclude "*"                            \
     ../../../examples/c++/ examples
 	@rsync -r -t -u -v --delete              \
