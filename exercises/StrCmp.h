@@ -15,3 +15,4 @@ int my_strcmp( const char *lhs, const char *rhs ) {
     else if (*rhs)    return -*rhs;
     else              return 0;
 }
+
