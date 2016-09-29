@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := test
 
 FILES :=     \
-    StrCmp
+    Incr
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
