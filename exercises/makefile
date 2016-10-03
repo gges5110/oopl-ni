@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := test
 
 FILES :=     \
-    Copy
+    Fill
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
