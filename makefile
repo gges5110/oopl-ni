@@ -125,11 +125,13 @@ sync:
     --include "Arguments.c++"                \
     --include "Cache.c++"                    \
     --include "Returns.c++"                  \
+    --include "Selection.c++"                \
     --include "Iteration.c++"                \
     --include "Auto.c++"                     \
     --include "Initializations.c++"          \
     --include "InitializerList.c++"          \
     --include "Iterators.c++"                \
+    --include "Functions.c++"                \
     --exclude "*"                            \
     ../../../examples/c++/ examples
 	@rsync -r -t -u -v --delete              \
@@ -142,9 +144,12 @@ sync:
     --include "Equal.c++"                    \
     --include "Equal.h"                      \
     --include "Incr.c++"                     \
+    --include "Incr.h"                       \
     --include "Copy.c++"                     \
+    --include "Copy.h"                       \
     --include "Fill.c++"                     \
     --include "AllOf.c++"                    \
+    --include "RMSE.c++"                     \
     --exclude "*"                            \
     ../../../exercises/c++/ exercises
 
