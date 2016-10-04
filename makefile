@@ -125,6 +125,7 @@ sync:
     --include "Arguments.c++"                \
     --include "Cache.c++"                    \
     --include "Returns.c++"                  \
+    --include "Selection.c++"                \
     --include "Iteration.c++"                \
     --include "Auto.c++"                     \
     --include "Initializations.c++"          \

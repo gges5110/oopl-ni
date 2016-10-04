@@ -16,6 +16,7 @@ FILES :=               \
     Arguments          \
     Cache              \
     Returns            \
+    Selection          \
     Iteration          \
     Auto               \
     Initializations    \
