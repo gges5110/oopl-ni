@@ -2,10 +2,14 @@
 
 FILES :=     \
 <<<<<<< HEAD
+<<<<<<< HEAD
     StrCmp
 =======
     Copy
 >>>>>>> Copy.h
+=======
+    Fill
+>>>>>>> Fill.h
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
