@@ -1,7 +1,8 @@
 .DEFAULT_GOAL := test
 
 FILES :=     \
-    RMSE
+    Transform\
+    Accumulate
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
