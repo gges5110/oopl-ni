@@ -3,6 +3,7 @@
 FILES :=     \
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     StrCmp
 =======
     Copy
@@ -10,6 +11,9 @@ FILES :=     \
 =======
     Fill
 >>>>>>> Fill.h
+=======
+    RMSE
+>>>>>>> another commit
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++

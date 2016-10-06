@@ -23,8 +23,8 @@ INSTANTIATE_TEST_CASE_P(
     RMSEListFixture,
     Values(
         rmse_while<list<double>::const_iterator, vector<double>::const_iterator, double>,
-        rmse_transform_accumulate<list<double>::const_iterator, vector<double>::const_iterator, double>,
-        rmse_back_inserter<list<double>::const_iterator, vector<double>::const_iterator, double>));
+        rmse_transform_accumulate<list<double>::const_iterator, vector<double>::const_iterator, double>/*,
+        rmse_back_inserter<list<double>::const_iterator, vector<double>::const_iterator, double>)*/);
 
 TEST_P(RMSEListFixture, test_1) {
     const list<double>   x = {2, 3, 4};

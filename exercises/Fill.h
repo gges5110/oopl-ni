@@ -15,10 +15,10 @@ void my_fill (FI b, FI e, const T& v) {
 #endif // Fill_h
 =======
 
+// We need a ForwardIt to compare the two iterators and write to it.
 
-
-template <typename OutputIt, typename T>
-void my_fill(OutputIt first, OutputIt last, T value) {
+template <typename ForwardIt, typename T>
+void my_fill(ForwardIt first, ForwardIt last, T value) {
     for (; first != last; ++first) {
         *first = value;
     }
