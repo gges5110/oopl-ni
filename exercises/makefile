@@ -2,7 +2,7 @@
 
 FILES :=     \
     IsPrime1 \
-    Strcmp   \
+    StrCmp   \
     Equal    \
     Incr     \
     Copy     \
