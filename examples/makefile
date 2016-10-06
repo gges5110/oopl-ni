@@ -20,7 +20,7 @@ FILES :=               \
     Iteration          \
     Auto               \
     Initializations    \
-    InitializorList    \
+    InitializerList    \
     Iterators          \
     Functions
 
