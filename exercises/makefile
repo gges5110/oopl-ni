@@ -1,7 +1,11 @@
 .DEFAULT_GOAL := test
 
 FILES :=     \
+<<<<<<< HEAD
     StrCmp
+=======
+    Copy
+>>>>>>> Copy.h
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
