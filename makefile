@@ -150,6 +150,7 @@ sync:
     --include "Fill.c++"                     \
     --include "AllOf.c++"                    \
     --include "RMSE.c++"                     \
+    --include "RMSE.h"                       \
     --include "Transform.c++"                \
     --include "Accumulate.c++"               \
     --include "RangeIterator.c++"            \
