@@ -1,7 +1,13 @@
 # oopl-ni
 This is a fork repo for Prof. Downing's cpp course.
 
-#How to merge?
+# Setup Environment
+In a linux environment, just run the setup.sh bash file at the top level.  
+<br>You may want to run it with permission: `sudo ./setup.sh`
+
+If the compiler does not work, it might be an issue with the g++ version. Change the CXX flag in the makefile and see what works for you.
+
+# How to merge?
 As a reminder of the method of merging between forks, here is a list of git commands:
 
 | N   | Command                           | Description                                                                                                            |
