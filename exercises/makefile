@@ -1,8 +1,7 @@
 .DEFAULT_GOAL := test
 
 FILES :=     \
-    Fill
-    
+    RMSE
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
