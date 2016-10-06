@@ -150,6 +150,10 @@ sync:
     --include "Fill.c++"                     \
     --include "AllOf.c++"                    \
     --include "RMSE.c++"                     \
+    --include "Transform.c++"                \
+    --include "Accumulate.c++"               \
+    --include "RangeIterator.c++"            \
+    --include "Range.c++"                    \
     --exclude "*"                            \
     ../../../exercises/c++/ exercises
 
