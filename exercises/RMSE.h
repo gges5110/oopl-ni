@@ -1,15 +1,52 @@
+// --------
+// RMSE.c++
+// --------
 
-#include <math.h>
+#include <algorithm> // transform
+#include <cmath>     // sqrt
+#include <cstddef>   // ptrdiff_t
+#include <iterator>  // back_inserter, distance
+#include <list>      // list
+#include <numeric>   // accumulate
 
-template <typename It1, typename It2, typename T>
-T rmse_while(It1 first1, It1 last1, It2 first2, T v) {
-    T sum();
-    int times = 0;
-    while (first1 != last1) {
-        sum += pow(*first1 - *first2, 2);
-        times++;
-        ++first1; ++first2;
-    }
+template <typename II1, typename II2, typename T>
+T rmse_while (II1 b, II1 e, II2 c, T v) {
+    if (b == e)
+        return v;
 
-    return sum / times;
-}
+    const std::ptrdiff_t s = std::distance(b, e);
+
+    while (b != e) {
+        const T d = (*b - *c);
+        v += (d * d);
+        ++b;
+        ++c;}
+
+    return std::sqrt(v / s);}
+
+template <typename II1, typename II2, typename T>
+T rmse_transform_accumulate (II1 b, II1 e, II2 c, T v) {
+    if (b == e)
+        return v;
+
+    const std::ptrdiff_t s = std::distance(b, e);
+
+    std::list<T> x(s);
+    std::transform(b, e, c, begin(x),
+        [] (T a, T p) -> T {const T d = a - p; return (d * d);});
+    v = std::accumulate(begin(x), end(x), v);
+
+    return std::sqrt(v / x.size());}
+
+template <typename II1, typename II2, typename T>
+T rmse_back_inserter (II1 b, II1 e, II2 c, T v) {
+    if (b == e)
+        return v;
+
+    std::list<T> x;
+
+    std::transform(b, e, c, std::back_inserter(x),
+        [] (T a, T p) -> T {const T d = a - p; return (d * d);});
+    v = std::accumulate(begin(x), end(x), v);
+
+    return std::sqrt(v / x.size());}

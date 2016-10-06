@@ -148,8 +148,15 @@ sync:
     --include "Copy.c++"                     \
     --include "Copy.h"                       \
     --include "Fill.c++"                     \
+    --include "Fill.h"                       \
     --include "AllOf.c++"                    \
+    --include "AllOf.h"                      \
     --include "RMSE.c++"                     \
+    --include "RMSE.h"                       \
+    --include "Transform.c++"                \
+    --include "Accumulate.c++"               \
+    --include "RangeIterator.c++"            \
+    --include "Range.c++"                    \
     --exclude "*"                            \
     ../../../exercises/c++/ exercises
 
