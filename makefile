@@ -150,6 +150,7 @@ sync:
     --include "Fill.c++"                     \
     --include "Fill.h"                       \
     --include "AllOf.c++"                    \
+<<<<<<< HEAD
     --include "AllOf.h"                      \
     --include "RMSE.c++"                     \
     --include "RMSE.h"                       \
@@ -157,6 +158,9 @@ sync:
     --include "Accumulate.c++"               \
     --include "RangeIterator.c++"            \
     --include "Range.c++"                    \
+=======
+    --include "RMSE.c++"                     \
+>>>>>>> merge
     --exclude "*"                            \
     ../../../exercises/c++/ exercises
 

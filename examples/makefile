@@ -20,7 +20,11 @@ FILES :=               \
     Iteration          \
     Auto               \
     Initializations    \
+<<<<<<< HEAD
     InitializerList    \
+=======
+    InitializorList    \
+>>>>>>> merge
     Iterators          \
     Functions
 
