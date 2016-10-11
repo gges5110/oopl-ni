@@ -30,3 +30,9 @@ TEST(IncrFixture, test_4) {
     int i = 2;
 //  post_incr(post_incr(i)); // error: no matching function for call to 'post_incr'
     ASSERT_EQ(2, i);}
+
+TEST(IncrFixture, test_5) {
+    float i = 2;
+    float j = post_incr(i);
+    ASSERT_EQ(3, i);
+    ASSERT_EQ(2, j);}

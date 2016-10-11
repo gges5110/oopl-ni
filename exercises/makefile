@@ -1,19 +1,8 @@
 .DEFAULT_GOAL := test
 
 FILES :=     \
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    StrCmp
-=======
-    Copy
->>>>>>> Copy.h
-=======
-    Fill
->>>>>>> Fill.h
-=======
-    RMSE
->>>>>>> another commit
+    Transform\
+    Accumulate
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++

@@ -1,8 +1,18 @@
+// -------------
+// Transform.c++
+// -------------
 
-template <typename II, typename OI, typename UF> 
-OI my_transform(II b, II e, OI c, UF f) {
-  while (b != e) {
-    *c = f(*b);
-    ++b; ++c;}
-  return c;
+// http://www.cplusplus.com/reference/algorithm/transform
+
+#ifndef Transform_h
+#define Transform_h
+
+template <typename InputIterator, typename OutputIterator, typename UnaryFunction>
+OutputIterator my_transform(InputIterator b, InputIterator e, OutputIterator c, UnaryFunction f) {
+    for (; b != e; ++b, ++c) {
+        *c = f(*b);
+    }
+    return c;
 }
+
+#endif
