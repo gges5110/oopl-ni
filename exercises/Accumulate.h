@@ -1,3 +1,9 @@
+// ------------
+// Accumulate.h
+// ------------
+
+#ifndef Accumulate_h
+#define Accumulate_h
 template <typename II, typename T, typename BF>
 T my_accumulate(II b, II e, T v, BF f) {
 
@@ -7,3 +13,7 @@ T my_accumulate(II b, II e, T v, BF f) {
   }
   return v;
 }
+
+
+#endif // Accumulate_h
+

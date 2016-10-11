@@ -131,7 +131,9 @@ sync:
     --include "Initializations.c++"          \
     --include "InitializerList.c++"          \
     --include "Iterators.c++"                \
+    --include "Consts.c++"                   \
     --include "Functions.c++"                \
+    --include "FunctionDefaults.c++"         \
     --exclude "*"                            \
     ../../../examples/c++/ examples
 	@rsync -r -t -u -v --delete              \
@@ -155,7 +157,9 @@ sync:
     --include "RMSE.c++"                     \
     --include "RMSE.h"                       \
     --include "Transform.c++"                \
+    --include "Transform.h"                  \
     --include "Accumulate.c++"               \
+    --include "Accumulate.h"                 \
     --include "RangeIterator.c++"            \
     --include "Range.c++"                    \
 =======
