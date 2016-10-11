@@ -1,13 +1,16 @@
 .DEFAULT_GOAL := test
 
-FILES :=     \
-    IsPrime1 \
-    StrCmp   \
-    Equal    \
-    Incr     \
-    Copy     \
-    Fill     \
-    AllOf
+FILES :=          \
+    IsPrime1      \
+    StrCmp        \
+    Equal         \
+    Incr          \
+    Copy          \
+    Fill          \
+    AllOf         \
+    Transform     \
+    Accumulate    \
+    RangeIterator
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++

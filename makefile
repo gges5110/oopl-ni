@@ -160,6 +160,7 @@ sync:
     --include "Accumulate.c++"               \
     --include "Accumulate.h"                 \
     --include "RangeIterator.c++"            \
+    --include "RangeIterator.h"              \
     --include "Range.c++"                    \
     --exclude "*"                            \
     ../../../exercises/c++/ exercises
