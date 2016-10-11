@@ -131,7 +131,9 @@ sync:
     --include "Initializations.c++"          \
     --include "InitializerList.c++"          \
     --include "Iterators.c++"                \
+    --include "Consts.c++"                   \
     --include "Functions.c++"                \
+    --include "FunctionDefaults.c++"         \
     --exclude "*"                            \
     ../../../examples/c++/ examples
 	@rsync -r -t -u -v --delete              \
