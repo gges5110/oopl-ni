@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := test
 
 FILES :=     \
-	RangeIterator
+	Range
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++

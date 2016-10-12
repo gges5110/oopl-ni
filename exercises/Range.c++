@@ -36,6 +36,13 @@ TEST(RangeFixture, test_1) {
     const Range<int>::iterator e = end(x);
     ASSERT_EQ(b, e);}
 
+TEST(RangeFixture, test_1_2) {
+    const Range<int> x(2, 3);
+    const Range<int>::iterator b = begin(x);
+    const Range<int>::iterator e = end(x);
+    ASSERT_NE(b, e);}
+
+
 TEST(RangeFixture, test_2) {
     Range<int> x(2, 3);
     Range<int>::iterator b = begin(x);
@@ -46,7 +53,7 @@ TEST(RangeFixture, test_2) {
     ASSERT_EQ(&y, &b);
     ASSERT_EQ(b, e);}
 
-TEST(RangeFixture, test_3) {
+TEST(RangeFixture, test_3) {       
     Range<int> x(2, 4);
     Range<int>::iterator b = begin(x);
     Range<int>::iterator e = end(x);
@@ -58,9 +65,11 @@ TEST(RangeFixture, test_3) {
     b++;
     ASSERT_EQ(b, e);}
 
+
 TEST(RangeFixture, test_4) {
     Range<int> x(2, 5);
     ASSERT_TRUE(equal(begin(x), end(x), begin({2, 3, 4})));}
+
 
 /*
 % Range
