@@ -162,6 +162,7 @@ sync:
     --include "RangeIterator.c++"            \
     --include "RangeIterator.h"              \
     --include "Range.c++"                    \
+    --include "Range.h"                      \
     --exclude "*"                            \
     ../../../exercises/c++/ exercises
 
