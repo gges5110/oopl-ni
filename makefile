@@ -132,7 +132,6 @@ sync:
     --include "InitializerList.c++"          \
     --include "Iterators.c++"                \
     --include "Consts.c++"                   \
-    --include "FunctionDefaults.c++"         \
     --include "Arrays.c++"                   \
     --exclude "*"                            \
     ../../../examples/c++/ examples

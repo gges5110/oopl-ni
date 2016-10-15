@@ -23,7 +23,6 @@ FILES :=               \
     InitializerList    \
     Iterators          \
     Consts             \
-    FunctionDefaults   \
     Arrays
 
 ifeq ($(shell uname), Darwin)                                           # Apple
