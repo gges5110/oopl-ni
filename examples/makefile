@@ -22,7 +22,9 @@ FILES :=               \
     Initializations    \
     InitializerList    \
     Iterators          \
-    Functions
+    Consts             \
+    FunctionDefaults   \
+    Arrays
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++

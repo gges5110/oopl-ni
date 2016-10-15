@@ -132,8 +132,8 @@ sync:
     --include "InitializerList.c++"          \
     --include "Iterators.c++"                \
     --include "Consts.c++"                   \
-    --include "Functions.c++"                \
     --include "FunctionDefaults.c++"         \
+    --include "Arrays.c++"                   \
     --exclude "*"                            \
     ../../../examples/c++/ examples
 	@rsync -r -t -u -v --delete              \
@@ -163,6 +163,8 @@ sync:
     --include "RangeIterator.h"              \
     --include "Range.c++"                    \
     --include "Range.h"                      \
+    --include "Vector1.c++"                  \
+    --include "Vector2.c++"                  \
     --exclude "*"                            \
     ../../../exercises/c++/ exercises
 
