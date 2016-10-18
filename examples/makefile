@@ -26,7 +26,8 @@ FILES :=               \
     InitializorList    \
 >>>>>>> merge
     Iterators          \
-    Functions
+    Consts             \
+    Arrays
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++

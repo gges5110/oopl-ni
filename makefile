@@ -132,8 +132,7 @@ sync:
     --include "InitializerList.c++"          \
     --include "Iterators.c++"                \
     --include "Consts.c++"                   \
-    --include "Functions.c++"                \
-    --include "FunctionDefaults.c++"         \
+    --include "Arrays.c++"                   \
     --exclude "*"                            \
     ../../../examples/c++/ examples
 	@rsync -r -t -u -v --delete              \
@@ -152,7 +151,6 @@ sync:
     --include "Fill.c++"                     \
     --include "Fill.h"                       \
     --include "AllOf.c++"                    \
-<<<<<<< HEAD
     --include "AllOf.h"                      \
     --include "RMSE.c++"                     \
     --include "RMSE.h"                       \
@@ -161,10 +159,11 @@ sync:
     --include "Accumulate.c++"               \
     --include "Accumulate.h"                 \
     --include "RangeIterator.c++"            \
+    --include "RangeIterator.h"              \
     --include "Range.c++"                    \
-=======
-    --include "RMSE.c++"                     \
->>>>>>> merge
+    --include "Range.h"                      \
+    --include "Vector1.c++"                  \
+    --include "Vector2.c++"                  \
     --exclude "*"                            \
     ../../../exercises/c++/ exercises
 

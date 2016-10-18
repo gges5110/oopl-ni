@@ -32,4 +32,3 @@ class Range_Iterator: public std::iterator<std::input_iterator_tag, T> {
 		}
 
 };
-

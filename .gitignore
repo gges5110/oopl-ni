@@ -1,3 +1,6 @@
 .DS_Store
+*.gcov
+*.gcda
+*.gcno
 Icon?
 OOPLNI.bbprojectd
