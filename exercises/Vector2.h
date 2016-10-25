@@ -1,9 +1,10 @@
+#include <memory>
 
 
-
-template <typename T>
+template <typename T, typename A = std::allocator<T>>
 class my_vector {
 private:
+	A _x;
 	T* _data;
 	int _size;	 
 
@@ -12,11 +13,16 @@ public:
 		return _size;
 	}
 
-	my_vector(const int size = 0, const T& value = T()): _size(size), _data(new T[size]) {
-		std::fill(begin(), end(), value);
+	my_vector(int size = 0, const T& value = T(), const A& x = A()): 
+		_x (),
+		_data (_x.allocate(size)),
+		_size (size) {
+		for (int i = 0; i < _size; ++i) {
+			_x.construct(_data + i, value);
+		}
 	}
 
-	my_vector(const my_vector<T>& that): _size(that._size) {
+	my_vector(const my_vector& that): _size(that._size) {
 		if (_size == 0) {
 			_data = nullptr;
 			return;
@@ -26,24 +32,14 @@ public:
 		}
 	}
 
-	my_vector<T>& operator=(const my_vector<T>& that) {
-		_size = that._size;
-
-		if (_data != that._data)
-			delete [] _data;
-		
-		if (_size == 0) {
-			_data = nullptr;
-		} else {
-			_data = new T[_size];
-			std::copy(that.begin(), that.end(), begin());
-		}
-		
+	my_vector& operator=(my_vector that) {
+		std::swap(_size, that._size);
+		std::swap(_data, that._data);		
 		return *this;
 	}
 
 	my_vector(const std::initializer_list<T> l) : _size(l.size()), _data(new T[l.size()]) {
-    	std::copy(l.begin(), l.end(), begin());
+    		std::copy(l.begin(), l.end(), begin());
 	}
 
 	T& operator[](const int index) {
@@ -54,8 +50,8 @@ public:
 		return _data[index];
 	}
 
-	bool operator==(const my_vector<T>& that) const {
-		return std::equal(begin(), end(), that.begin());
+	friend bool operator==(const my_vector& lhs, const my_vector& rhs) {
+		return lhs.size() == rhs.size() && std::equal(lhs.begin(), lhs.end(), rhs.begin());
 	}
 
 
@@ -68,7 +64,10 @@ public:
 	}
 
 	~my_vector() {
-		delete [] _data;
+		for (int i = 0; i < _size; ++i) {
+			_x.destroy(_data + i);
+		}
+		_x.deallocate(_data, _size);	
 	}
 
 };

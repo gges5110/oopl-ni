@@ -28,8 +28,9 @@ TYPED_TEST_CASE(VectorFixture, vector_types);
 TYPED_TEST(VectorFixture, test_1) {
     using vector_type = typename TestFixture::vector_type;
 
-    const vector_type x(10, 2);
+    vector_type x(10, 2);
     const vector_type y = x;
+	x = x;
     ASSERT_NE(begin(x), begin(y));
     ASSERT_EQ(x, y);}
 
