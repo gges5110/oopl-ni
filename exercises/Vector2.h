@@ -5,7 +5,7 @@ template <typename T>
 class my_vector {
 private:
 	T* _data;
-	int _size = 0;	 
+	int _size;	 
 
 public:
 	int size() const {
@@ -16,23 +16,30 @@ public:
 		std::fill(begin(), end(), value);
 	}
 
-	my_vector(const my_vector<T>& that) {
-		if (_size != 0) {
-			delete [] _data;
-		} 
-		_size = that._size;
-		_data = new T[_size];
-		std::copy(that.begin(), that.end(), begin());
+	my_vector(const my_vector<T>& that): _size(that._size) {
+		if (_size == 0) {
+			_data = nullptr;
+			return;
+		} else {
+			_data = new T[_size];
+			std::copy(that.begin(), that.end(), begin());
+		}
 	}
 
 	my_vector<T>& operator=(const my_vector<T>& that) {
-		
-		if (_size != 0) {
-			delete [] _data;
-		} 
 		_size = that._size;
-		_data = new T[_size];
-		std::copy(that.begin(), that.end(), begin());
+
+		if (_data != that._data)
+			delete [] _data;
+		
+		if (_size == 0) {
+			_data = nullptr;
+		} else {
+			_data = new T[_size];
+			std::copy(that.begin(), that.end(), begin());
+		}
+		
+		return *this;
 	}
 
 	my_vector(const std::initializer_list<T> l) : _size(l.size()), _data(new T[l.size()]) {
