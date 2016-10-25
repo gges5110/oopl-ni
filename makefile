@@ -133,6 +133,7 @@ sync:
     --include "Iterators.c++"                \
     --include "Consts.c++"                   \
     --include "Arrays.c++"                   \
+    --include "FunctionOverloading.c++"      \
     --exclude "*"                            \
     ../../../examples/c++/ examples
 	@rsync -r -t -u -v --delete              \
@@ -163,7 +164,13 @@ sync:
     --include "Range.c++"                    \
     --include "Range.h"                      \
     --include "Vector1.c++"                  \
+    --include "Vector1.h"                    \
     --include "Vector2.c++"                  \
+    --include "Vector2.h"                    \
+    --include "Vector3.c++"                  \
+    --include "Memory.h"                     \
+    --include "Move.c++"                     \
+    --include "Vector4.c++"                  \
     --exclude "*"                            \
     ../../../exercises/c++/ exercises
 
