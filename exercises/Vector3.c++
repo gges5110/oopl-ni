@@ -43,10 +43,11 @@ TYPED_TEST(VectorFixture, test_2) {
     vector_type x(3);
     ASSERT_EQ(3, x.size());
     ASSERT_TRUE(equal(begin(x), end(x), begin({0, 0, 0})));
-    ASSERT_EQ(0, x.at(1));
-    x.at(1) = 2;
+    ASSERT_EQ(0, x[1]);
+    x[1] = 2;
     ASSERT_TRUE(equal(begin(x), end(x), begin({0, 2, 0})));
-    ASSERT_THROW(x.at(3), out_of_range);}
+    fill(begin(x), end(x), 4);
+    ASSERT_TRUE(equal(begin(x), end(x), begin({4, 4, 4})));}
 
 TYPED_TEST(VectorFixture, test_3) {
     using vector_type = typename TestFixture::vector_type;
@@ -54,8 +55,8 @@ TYPED_TEST(VectorFixture, test_3) {
     const vector_type x(3, 2);
     ASSERT_EQ(3, x.size());
     ASSERT_TRUE(equal(begin(x), end(x), begin({2, 2, 2})));
-    ASSERT_EQ(2, x.at(1));
-    // x.at(1) = 3;                                         // error: read-only variable is not assignable
+    ASSERT_EQ(2, x[1]);
+    // x[1] = 3;                                            // error: cannot assign to return value because function 'operator[]' returns a const value
     const vector_type y(6, 2);
     ASSERT_TRUE(equal(begin(x), end(x), begin(y)));}
 
@@ -91,6 +92,28 @@ TYPED_TEST(VectorFixture, test_7) {
     ASSERT_TRUE(equal(begin(x), end(x), begin({2, 2, 2})));}
 
 TYPED_TEST(VectorFixture, test_8) {
+    using vector_type = typename TestFixture::vector_type;
+
+    vector_type x(3);
+    ASSERT_EQ(3, x.size());
+    ASSERT_TRUE(equal(begin(x), end(x), begin({0, 0, 0})));
+    ASSERT_EQ(0, x.at(1));
+    x.at(1) = 2;
+    ASSERT_TRUE(equal(begin(x), end(x), begin({0, 2, 0})));
+    ASSERT_THROW(x.at(3), out_of_range);}
+
+TYPED_TEST(VectorFixture, test_9) {
+    using vector_type = typename TestFixture::vector_type;
+
+    const vector_type x(3, 2);
+    ASSERT_EQ(3, x.size());
+    ASSERT_TRUE(equal(begin(x), end(x), begin({2, 2, 2})));
+    ASSERT_EQ(2, x.at(1));
+    // x.at(1) = 3;                                         // error: read-only variable is not assignable
+    const vector_type y(6, 2);
+    ASSERT_TRUE(equal(begin(x), end(x), begin(y)));}
+
+TYPED_TEST(VectorFixture, test_10) {
     using vector_type = typename TestFixture::vector_type;
 
     const vector_type x(10, 2);
