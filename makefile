@@ -168,6 +168,7 @@ sync:
     --include "Vector2.c++"                  \
     --include "Vector2.h"                    \
     --include "Vector3.c++"                  \
+    --include "Vector3.h"                    \
     --include "Memory.h"                     \
     --include "Move.c++"                     \
     --include "Vector4.c++"                  \
