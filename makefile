@@ -171,6 +171,7 @@ sync:
     --include "Vector3.h"                    \
     --include "Memory.h"                     \
     --include "Move.c++"                     \
+    --include "Move.h"                       \
     --include "Vector4.c++"                  \
     --exclude "*"                            \
     ../../../exercises/c++/ exercises
