@@ -13,45 +13,6 @@
 
 using namespace std;
 
-struct A {
-    friend bool operator < (const A& lhs, const A& rhs) {
-        return lhs._n < rhs._n;}
-
-    int _n;
-
-    A (int n) :
-            _n (n)
-        {}};
-
-struct B : A {
-    B (int n) :
-            A (n)
-        {}};
-
-
-
-int my_max (int x, int y) {
-    if (x < y)
-        return y;
-    return x;}
-
-const int* my_max (const int* x, const int* y) {
-    if (*x < *y)
-        return y;
-    return x;}
-
-const char* my_max (const char* x, const char* y) {
-    if (strcmp(x, y) < 0)
-        return y;
-    return x;}
-
-const A& my_max (const A& x, const A& y) {
-    if (x < y)
-        return y;
-    return x;}
-
-
-
 string f (int) {              // l-value or r-value
     return "f(int)";}
 
@@ -107,32 +68,6 @@ string s (int&&) {           // r-value
 
 int main () {
     cout << "FunctionOverloading.c++" << endl;
-
-    assert(my_max(2,   3)   == 3);
-//  assert(my_max(2,   3.4) == 3); // warning: implicit conversion from 'double' to 'int' changes value from 3.4 to 3
-//  assert(my_max(2.3, 4)   == 4); // warning: implicit conversion from 'double' to 'int' changes value from 2.3 to 2
-//  assert(my_max(2.3, 4.5) == 4); // warning: implicit conversion from 'double' to 'int' changes value from 2.3 to 2
-                                   // warning: implicit conversion from 'double' to 'int' changes value from 4.5 to 4
-
-    {
-    int i = 2;
-    int j = 3;
-    assert(my_max(&i, &j) == &j);
-    }
-
-    assert(strcmp(my_max("abc", "def"), "def") == 0);
-
-    {
-    A x = 2;
-    A y = 3;
-    assert(&my_max(x, y) == &y);
-    }
-
-    {
-    B x = 2;
-    B y = 3;
-    assert(&my_max(x, y) == &y);
-    }
 
     {
           int i  = 2;
