@@ -25,7 +25,10 @@ FILES :=                \
     Consts              \
     Arrays              \
     FunctionOverloading \
-    Move
+    Move                \
+    Classes             \
+    MethodOverriding1   \
+    MethodOverriding2
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++

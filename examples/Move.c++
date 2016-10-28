@@ -33,7 +33,7 @@ template <typename T>
 struct B {
     A<T> _x;
 
-    B ( ) :
+    B () :
             _x () {
         cout << "B() ";}
 
@@ -78,11 +78,11 @@ struct C {
     ~C() {
         cout << "~C() ";}};
 
-B<int> f () {
-    return B<int>();}
+B<int> f (B<int>& z) {
+    return z;}
 
-C<int> g () {
-    return C<int>();}
+C<int> g (C<int>& z) {
+    return z;}
 
 int main() {
     {
@@ -90,20 +90,18 @@ int main() {
     B<int> x;             // 1. ctor: A() B()
     cout << endl;
 
-    cout << "2. ctor: ";
-    B<int> y;             // 2. ctor: A() B()
+    {
+    cout << "2. copy: ";
+    B<int> y = f(x);      // 2. copy: A(const A&) B(const B&) ~B() ~A()
+    }
     cout << endl;
 
     cout << "3. copy: ";
-    x = y;                // 3. copy: =(const A&) =(const B&)
+    x = f(x);             // 3. copy: A(const A&) B(const B&) =(const A&) =(const B&) ~B() ~A()
     cout << endl;
 
-    cout << "4. copy: ";
-    x = f();              // 4. copy: A() B() =(const A&) =(const B&) ~B() ~A()
-    cout << endl;
-
-    cout << "5. dtor: ";
-    }                     // 5. dtor: ~B() ~A() ~B() ~A()
+    cout << "4. dtor: ";
+    }                     // 4. dtor: ~B() ~A()
     cout << endl << endl;
 
 
@@ -113,34 +111,30 @@ int main() {
     C<int> x;            // 1. ctor: A() C()
     cout << endl;
 
-    cout << "2. ctor: ";
-    C<int> y;            // 2. ctor: A() C()
+    {
+    cout << "2. copy: ";
+    C<int> y = g(x);     // 2. ctor: A(const A&) C(const C&) ~C() ~A()
+    }
     cout << endl;
 
-    cout << "3. copy: ";
-    x = y;               // 3. copy: =(const A&) =(const C&)
+    cout << "3. move: ";
+    x = g(x);            // 3. copy: A(const A&) C(const C&) =(A&&) =(C&&) ~C() ~A()
     cout << endl;
 
-    cout << "4. move: ";
-    x = g();             // 4. move: A() C() =(A&&) =(C&&) ~C() ~A()
-    cout << endl;
-
-    cout << "5. dtor: ";
-    }                    // 5. dtor: ~C() ~A() ~C() ~A()
+    cout << "4. dtor: ";
+    }                    // 4. dtor: ~C() ~A()
     cout << endl;
 
     return 0;}
 
 /*
 1. ctor: A() B()
-2. ctor: A() B()
-3. copy: =(const A&) =(const B&)
-4. copy: A() B() =(const A&) =(const B&) ~B() ~A()
-5. dtor: ~B() ~A() ~B() ~A()
+2. copy: A(const A&) B(const B&) ~B() ~A()
+3. copy: A(const A&) B(const B&) =(const A&) =(const B&) ~B() ~A()
+4. dtor: ~B() ~A()
 
 1. ctor: A() C()
-2. ctor: A() C()
-3. copy: =(const A&) =(const C&)
-4. move: A() C() =(A&&) =(C&&) ~C() ~A()
-5. dtor: ~C() ~A() ~C() ~A()
+2. copy: A(const A&) C(const C&) ~C() ~A()
+3. move: A(const A&) C(const C&) =(A&&) =(C&&) ~C() ~A()
+4. dtor: ~C() ~A()
 */
