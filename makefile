@@ -134,6 +134,7 @@ sync:
     --include "Consts.c++"                   \
     --include "Arrays.c++"                   \
     --include "FunctionOverloading.c++"      \
+    --include "Move.c++"                     \
     --exclude "*"                            \
     ../../../examples/c++/ examples
 	@rsync -r -t -u -v --delete              \
@@ -170,8 +171,6 @@ sync:
     --include "Vector3.c++"                  \
     --include "Vector3.h"                    \
     --include "Memory.h"                     \
-    --include "Move.c++"                     \
-    --include "Move.h"                       \
     --include "Vector4.c++"                  \
     --exclude "*"                            \
     ../../../exercises/c++/ exercises
