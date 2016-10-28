@@ -92,8 +92,7 @@ class my_vector {
             my_uninitialized_copy(_a, rhs._b, rhs._e, _b);}
 
         my_vector& operator = (my_vector rhs) {
-            std::swap(_b, rhs._b);
-            std::swap(_e, rhs._e);
+            swap(rhs);
             return *this;}
 
         ~my_vector () {
@@ -127,6 +126,11 @@ class my_vector {
             return const_cast<my_vector*>(this)->end();}
 
         size_type size () const {
-            return _e - _b;}};
+            return _e - _b;}
+
+        void swap (my_vector& rhs) {
+            std::swap(_a, rhs._a);
+            std::swap(_b, rhs._b);
+            std::swap(_e, rhs._e);}};
 
 #endif // Vector_h

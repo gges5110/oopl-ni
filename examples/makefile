@@ -1,29 +1,31 @@
 .DEFAULT_GOAL := test
 
-FILES :=               \
-    Hello              \
-    UnitTests3         \
-    Coverage1          \
-    Coverage2          \
-    Coverage3          \
-    Exceptions         \
-    Variables          \
-    Types              \
-    Operators          \
-    Variables          \
-    Types              \
-    Representations    \
-    Arguments          \
-    Cache              \
-    Returns            \
-    Selection          \
-    Iteration          \
-    Auto               \
-    Initializations    \
-    InitializerList    \
-    Iterators          \
-    Consts             \
-    Arrays
+FILES :=                \
+    Hello               \
+    UnitTests3          \
+    Coverage1           \
+    Coverage2           \
+    Coverage3           \
+    Exceptions          \
+    Variables           \
+    Types               \
+    Operators           \
+    Variables           \
+    Types               \
+    Representations     \
+    Arguments           \
+    Cache               \
+    Returns             \
+    Selection           \
+    Iteration           \
+    Auto                \
+    Initializations     \
+    InitializerList     \
+    Iterators           \
+    Consts              \
+    Arrays              \
+    FunctionOverloading \
+    Move
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
