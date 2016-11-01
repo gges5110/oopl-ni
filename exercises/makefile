@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := test
 
 FILES :=     \
-	Vector2
+	Move
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
