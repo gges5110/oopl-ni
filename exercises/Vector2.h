@@ -5,9 +5,9 @@
 #ifndef Vector_h
 #define Vector_h
 
-#include <algorithm> // copy, fill, swap
+#include <algorithm> // copy, fill
 #include <cstddef>   // ptrdiff_t, size_t
-#include <utility>  // !=
+#include <utility>  // !=, swap
 
 using std::rel_ops::operator!=;
 
@@ -127,8 +127,7 @@ class my_vector {
             std::copy(rhs._b, rhs._e, _b);}
 
         my_vector& operator = (my_vector rhs) {
-            std::swap(_b, rhs._b);
-            std::swap(_e, rhs._e);
+            swap(rhs);
             return *this;}
 
         ~my_vector () {

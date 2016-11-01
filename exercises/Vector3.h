@@ -118,5 +118,4 @@ public:
 	}
 
 };
-
 #endif // Vector_h
