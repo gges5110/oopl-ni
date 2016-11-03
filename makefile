@@ -177,6 +177,7 @@ sync:
     --include "Vector4.c++"                  \
     --include "Vector4.h"                    \
     --include "Shapes1.c++"                  \
+    --include "Shapes1.h"                    \
     --include "Shapes2.c++"                  \
     --include "Shapes3.c++"                  \
     --exclude "*"                            \
