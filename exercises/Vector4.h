@@ -106,9 +106,8 @@ class my_vector {
             return *this;}
 
         my_vector& operator = (my_vector&& rhs) {
-            my_vector that;
+            my_vector that(move(rhs));
             swap(that);
-            swap(rhs);
             return *this;}
 
         ~my_vector () {
