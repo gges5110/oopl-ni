@@ -110,7 +110,7 @@ TEST(ShapeFixture, test_6) {
     const AbstractShape* const p = new Circle(2, 3, 4);
     const AbstractShape*       q = new Circle(2, 3, 5);
     ASSERT_NE(*p, *q);
-//  *q = *p;                                            // illdefined
+//  *q = *p;                                            // error: no viable overloaded '='
     delete q;
     q = p->clone();
     ASSERT_EQ(*p, *q);
