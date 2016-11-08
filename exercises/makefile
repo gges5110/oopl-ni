@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := test
 
 FILES :=     \
-	Move
+	Shapes3
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
@@ -46,7 +46,7 @@ else                                                                    # UTCS
     LIB          := /usr/lib
     LDFLAGS      := -lboost_serialization -lgtest -lgtest_main -pthread
     CLANG-CHECK  := clang-check-3.8
-    GCOV         := gcov-4.8
+    GCOV         := gcov
     GCOVFLAGS    := -fprofile-arcs -ftest-coverage
     VALGRIND     := valgrind
     DOXYGEN      := doxygen

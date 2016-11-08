@@ -5,7 +5,7 @@
 #include <cassert>  // assert
 #include <iostream> // cout, endl, istream, ostream
 #include <utility>  // !=
-
+#include <sstream>
 #include "gtest/gtest.h"
 
 using namespace std;
@@ -125,3 +125,14 @@ TEST(ShapeFixture, test_8) {
     ASSERT_EQ(3.14 * 4 * 4, p[0].area());
 //  p[1].area();                                           // illdefined
     }
+
+TEST(ShapeFixture, test_9) {
+    const Shape* const p = new Circle(2, 3, 4);
+          Shape* const q = new Circle(2, 3, 5);
+	std::ostringstream out1;
+	out1 << *p;
+	ASSERT_EQ(out1.str(), "2 3 4");
+	std::ostringstream out2;
+	out2 << *q;
+	ASSERT_EQ(out2.str(), "2 3 5");
+}
