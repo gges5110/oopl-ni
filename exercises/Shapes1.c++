@@ -31,8 +31,8 @@ class Shape {
                 _y (y)
             {}
 
-        Shape             (const Shape&) = default;
-        ~Shape            ()             = default;
+               Shape      (const Shape&) = default;
+               ~Shape     ()             = default;
         Shape& operator = (const Shape&) = default;
 
         double area () const {

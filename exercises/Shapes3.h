@@ -1,5 +1,11 @@
-#include <iostream>
-#include <utility>
+// ---------
+// Shapes3.h
+// ---------
+
+#ifndef Shapes3_h
+#define Shapes3_h
+
+#include <utility> // !=
 
 using std::rel_ops::operator!=;
 
@@ -49,3 +55,4 @@ public:
 	}
 
 };
+#endif // Shapes3_h

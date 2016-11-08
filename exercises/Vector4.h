@@ -153,52 +153,40 @@ class my_vector {
         using const_iterator  = const_pointer;
 
     private:
-        pointer _b;
-        pointer _e;
+// http://scottmeyers.blogspot.com/2014/06/the-drawbacks-of-implementing-move.html
 
-    public:
-        explicit my_vector (size_type s = 0, const_reference v = T()) :
-                _b ((s == 0) ? nullptr : new T[s]),
-                _e ((s == 0) ? nullptr : _b + s) {
-            std::fill(_b, _e, v);}
+#ifndef Vector_h
+#define Vector_h
 
-        my_vector (std::initializer_list<T> rhs) :
-                _b ((rhs.size() == 0) ? nullptr : new T[rhs.size()]),
-                _e ((rhs.size() == 0) ? nullptr : _b + rhs.size()) {
-            std::copy(rhs.begin(), rhs.end(), _b);}
+#include <algorithm>        // equal, lexicographical_compare, swap
+#include <cstddef>          // ptrdiff_t, size_t
+#include <initializer_list> // initializer_list
+#include <memory>           // allocator
+#include <stdexcept>        // out_of_range
+#include <utility>          // !=, <=, >, >=
 
-        my_vector (const my_vector& rhs) :
-                _b (rhs.size() == 0 ? nullptr : new T[rhs.size()]),
-                _e (rhs.size() == 0 ? nullptr : _b + rhs.size()) {
-            std::copy(rhs._b, rhs._e, _b);}
+#include "Memory.h"  // my_destroy, my_uninitialized_copy, my_uninitialized_fill
 
-        my_vector& operator = (my_vector rhs) {
-            std::swap(_b, rhs._b);
-            std::swap(_e, rhs._e);
-            return *this;}
+namespace std     {
+namespace rel_ops {
 
-        ~my_vector () {
-            delete [] _b;}
+template <typename T>
+inline bool operator != (const T& lhs, const T& rhs) {
+    return !(lhs == rhs);}
 
-        reference operator [] (size_type i) {
-            return _b[i];}
+template <typename T>
+inline bool operator <= (const T& lhs, const T& rhs) {
+    return !(rhs < lhs);}
 
-        const_reference operator [] (size_type i) const {
-            return (*const_cast<my_vector*>(this))[i];}
+template <typename T>
+inline bool operator > (const T& lhs, const T& rhs) {
+    return (rhs < lhs);}
 
-        iterator begin () {
-            return _b;}
+template <typename T>
+inline bool operator >= (const T& lhs, const T& rhs) {
+    return !(lhs < rhs);}
 
-        const_iterator begin () const {
-            return const_cast<my_vector*>(this)->begin();}
-
-        iterator end () {
-            return _e;}
-
-        const_iterator end () const {
-            return const_cast<my_vector*>(this)->end();}
-
-        size_type size () const {
-            return _e - _b;}};
+} // rel_ops
+} // std;
 */
 #endif // Vector_h
