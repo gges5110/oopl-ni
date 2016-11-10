@@ -44,5 +44,4 @@ public:
 	}
 
 };
-
 #endif // Shapes1_h

@@ -31,9 +31,25 @@ class Shape {
                 _y (y)
             {}
 
-               Shape      (const Shape&) = default;
-               ~Shape     ()             = default;
+        Shape (const Shape&) = default;
+/*
+        Shape (const Shape& rhs) :
+                _x (rhs._x),
+                _y (rhs._y)
+            {}
+*/
+          ~Shape () = default;
+/*
+        ~Shape ()
+            {}
+*/
         Shape& operator = (const Shape&) = default;
+/*
+        Shape& operator = (const Shape& rhs) {
+            _x = rhs._x;
+            _y = rhs._y;
+            return *this;}
+*/
 
         double area () const {
             return 0;}
