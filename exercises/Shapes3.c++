@@ -27,6 +27,12 @@ class AbstractShape {
 
     protected:
         AbstractShape& operator = (const AbstractShape&) = default;
+/*
+        AbstractShape& operator = (const AbstractShape& rhs) {
+            _x = rhs._x;
+            _y = rhs._y;
+            return *this;}
+*/
 
         virtual bool equals (const AbstractShape& rhs) const = 0;
 
@@ -41,6 +47,12 @@ class AbstractShape {
             {}
 
         AbstractShape (const AbstractShape&) = default;
+/*
+        AbstractShape (const AbstractShape& rhs) :
+                _x (rhs._x),
+                _y (rhs._y)
+            {}
+*/
 
         virtual ~AbstractShape ()
             {}

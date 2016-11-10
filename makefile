@@ -184,6 +184,8 @@ sync:
     --include "Shapes3.h"                    \
     --include "Shapes.h"                     \
     --include "Handle1.c++"                  \
+    --include "Handle2.c++"                  \
+    --include "Handle3.c++"                  \
     --exclude "*"                            \
     ../../../exercises/c++/ exercises
 

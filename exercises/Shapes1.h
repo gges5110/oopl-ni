@@ -28,9 +28,25 @@ class Circle : public Shape {
                 _r    (r)
             {}
 
-                Circle     (const Circle&) = default;
-               ~Circle     ()              = default;
+        Circle (const Circle&) = default;
+/*
+        Circle (const Circle& rhs) :
+                Shape (rhs),
+                _r    (rhs._r)
+            {}
+*/
+          ~Circle () = default;
+/*
+        ~Circle ()
+            {}
+*/
         Circle& operator = (const Circle&) = default;
+/*
+        Circle& operator = (const Circle& rhs) {
+            Shape::operator=(rhs);
+            _r = rhs._r;
+            return *this;}
+*/
 
         double area () const {
             return 3.14 * _r * _r;}
